@@ -4,15 +4,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
-/**
- * Created on 21/8/24.
- */
-@Getter
-@Setter
+
+@Data
 @Entity
+@EqualsAndHashCode(of = "id")
 @Table(name = "products")
 public class Product {
     @Id

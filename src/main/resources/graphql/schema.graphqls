@@ -1,4 +1,27 @@
-type Query
+type Query {
+    products(first: Int, after: String, last: Int, before: String, sort: [String], direction: Direction): ProductConnection
+}
+
+enum Direction {
+    ASC
+    DESC
+}
+
+type Product {
+    id: Int!
+    name: String!
+    description: String
+}
+
+type ProductConnection {
+    edges: [ProductEdge]
+    pageInfo: PageInfo
+}
+
+type ProductEdge {
+    cursor: String!
+    node: Product
+}
 
 type PageInfo {
     startCursor: String

@@ -1,5 +1,0 @@
-type Permission {
-    name: String!
-    description: String
-    module: String!
-}
